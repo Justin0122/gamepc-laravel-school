@@ -1,0 +1,578 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+@import 'compact-mode';
+@import 'componentPage';
+
+$primary-color: #13151d;
+$secondary-color: #171923;
+$tertiary-color: #1b1e2a;
+$laravelRed: #f44336;
+$textColor: #928c71;
+$navheight: 5em;
+$sidenav-width: 9.5em;
+
+$light: #ffffff;
+$dark: lighten(#000000, 8%);
+$glow: #0ba9ca;
+$fs: 200px;
+
+
+* {
+  text-decoration: none !important;
+}
+
+body {
+  background-color: $secondary-color;
+  color: $textColor;
+  font-weight: 10;
+  height: 100vh;
+  //use minecraft font
+  font-family: "Minecraft", sans-serif;
+}
+
+a:hover {
+  animation: rainbow 3s infinite;
+}
+
+.navbar a {
+  color: $laravelRed;
+}
+
+.navbar {
+  color: $laravelRed;
+  //add shadow to the bottom of the navbar
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  margin-left: -8.5em;
+}
+
+.bg-darkLaravel {
+  background-color: $primary-color;
+  color: $textColor;
+}
+
+.sidebar {
+  height: 100%;
+  width: $sidenav-width;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.2em;
+
+  a {
+    color: $textColor;
+    transition: color 0.5s ease-in-out;
+  }
+
+  a:hover {
+    //use rainbow animation
+    animation: rainbow 3s infinite;
+  }
+
+  .nav-item {
+    padding: 0.6em;
+    transition: background-color 0.5s ease-in-out;
+
+    &:hover {
+      background-color: rgb(73, 94, 41);
+    }
+
+    width: $sidenav-width;
+    overflow: hidden;
+  }
+
+  .nav-link {
+    margin: 0;
+  }
+
+  #nav-item-bordered {
+    border-bottom: 1px solid $textColor;
+  }
+
+  .nav-item:hover {
+    background-color: $tertiary-color;
+  }
+
+  .nav-item.active {
+    background-color: $tertiary-color !important;
+
+    a {
+      color: $laravelRed !important;
+    }
+  }
+}
+
+.containerLogo {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#side {
+  background: $primary-color;
+  height: 100vh;
+  width: $sidenav-width;
+  z-index: 1000;
+  position: fixed;
+  align-items: baseline;
+  padding-top: 3em;
+}
+
+.logo {
+  background-color: $primary-color;
+
+  img {
+    transition: transform 0.3s ease-out !important;
+    filter: invert(10%);
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+      filter: none;
+    }
+  }
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.links > a {
+  color: $textColor;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #ff0000;
+  }
+
+  25% {
+    color: #ff7f00;
+  }
+
+  50% {
+    color: #ffff00;
+  }
+
+  75% {
+    color: #00ff00;
+  }
+
+  100% {
+    color: #0000ff;
+  }
+}
+
+.links > a:hover {
+  color: #000;
+  animation: rainbow 5s infinite;
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.title {
+  width: 7ch;
+  font-size: 10em;
+  animation: typing 1s steps(7), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  color: $textColor;
+}
+
+.title a {
+  color: $laravelRed;
+  font-weight: bold;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+th,
+td {
+  border-bottom: 1px solid $secondary-color;
+}
+
+th {
+  background-color: $primary-color;
+  color: $laravelRed;
+  border-bottom: 1px solid $laravelRed;
+  font-size: 1.2em;
+}
+
+.links a {
+  font-size: 1.4em;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .navbar-brand {
+    margin-left: 0;
+  }
+  .containerLogo {
+    padding-top: 0;
+  }
+  .title {
+    font-size: 5em;
+  }
+  body {
+    margin: 0;
+  }
+}
+
+table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 1em;
+}
+
+.gamer-mode {
+  * {
+    //make color rainbow
+    animation: rainbow 3s infinite;
+  }
+}
+
+.icon {
+  font-size: 2em;
+  transition: font-size 0.5s ease-in-out;
+}
+
+table td,
+table th {
+  vertical-align: middle;
+}
+
+
+table tr:hover:not(thead tr) {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: rainbow 3s infinite !important;
+  transform: scale(1.01);
+  background-color: $primary-color;
+}
+
+table tr {
+  transition: transform 0.4s ease-in-out;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+
+}
+
+.grid-item {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.component {
+  padding: 15px 15px;
+  -webkit-box-shadow: 3px 1px 14px 1px rgba(0, 0, 0, 0.548);
+  box-shadow: 3px 1px 14px 1px rgba(0, 0, 0, 0.548);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    -webkit-box-shadow: 5px 1px 14px 7px rgba(0, 0, 0, 0.548);
+    box-shadow: 5px 1px 14px 7px rgba(0, 0, 0, 0.548);
+    transform: scale(1.01);
+  }
+}
+
+.img-responsive:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: -2px -5px 10px 4px rgba(0, 0, 0, 0.44);
+  box-shadow: -2px -5px 10px 4px rgba(0, 0, 0, 0.44);
+}
+
+a {
+  cursor: pointer;
+}
+
+.breadcrumb {
+  //center everything
+  display: flex;
+  width: 47em;
+  justify-content: center;
+  align-items: center;
+  //make the breadcrumb look like a button
+  background-color: $primary-color;
+  //remove all padding
+  padding: 0 !important;
+  //remove all margin
+  margin-right: 14.5em;
+  margin-bottom: 0;
+}
+
+#navbarSupportedContent {
+  flex-grow: 0 !important;
+}
+
+.products.container {
+  width: 55%;
+}
+
+.breadcrumb-item {
+  //make it so only 50 characters are shown
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 20ch !important;
+  cursor: default;
+
+  //when hovered over, show the full name with a small delay
+  &:hover {
+    max-width: 100ch !important;
+    transition: max-width 1s ease-in-out;
+    animation: rainbow 3s infinite;
+  }
+
+  //when stopped hovering, hide the full name with a small delay
+  &:not(:hover) {
+    max-width: 20ch !important;
+    transition: max-width 2s ease-in-out;
+  }
+}
+
+.productLink {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 50ch !important;
+
+  &:hover {
+    max-width: 70ch !important;
+    transition: max-width 1s ease-in-out;
+    animation: rainbow 3s infinite;
+  }
+
+  &:not(:hover) {
+    max-width: 50ch !important;
+    transition: max-width 1.5s ease-in-out;
+  }
+}
+
+.iconRow, .imageRow {
+  font-size: 2em;
+  text-align: center;
+
+  button:hover {
+    animation: wobble 1s ease-in-out;
+  }
+}
+
+#iconRow, #imageRow {
+  text-align: center;
+}
+
+
+#parttypeTable {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  float: none;
+}
+
+.filter {
+  float: right;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  width: 20%;
+  list-style-type: none;
+  font-size: 1.4em;
+  padding-left: 0.2em;
+  right: 0;
+  position: fixed;
+
+  .nav-item.active {
+    background-color: $secondary-color;
+    color: $laravelRed;
+  }
+}
+
+.home-filter {
+  .filter {
+    width: 15%;
+  }
+}
+
+.component-row {
+  cursor: pointer;
+
+}
+
+.my-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  width: 100%;
+
+  .flex.justify-between.flex-1 {
+    display: none;
+  }
+}
+
+.my-pagination .page-item a,
+.my-pagination .page-item span {
+  background-color: $primary-color;
+  color: $laravelRed;
+}
+
+.w-5.h-5 {
+  width: 1em;
+  height: 1em;
+}
+
+.big-num {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.small-num {
+  font-size: 1em;
+  top: 1.5em;
+}
+
+.addcomponent {
+  background-color: $primary-color;
+  //make the icon thicker
+  font-weight: bolder;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.topnav {
+  margin-left: 9.5em;
+  z-index: 1;
+}
+
+.products.container {
+  margin-left: 23em;
+}
+
+.nav-item.nav-breadcrumb {
+  margin-left: 22.5em;
+}
+
+.laravelRed {
+  color: $laravelRed;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px);
+    filter: blur(2px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px);
+    filter: blur(0px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-250px);
+    display: none;
+  }
+}
+
+.session_info {
+  animation: slide 10s ease 0s 1 normal forwards;
+}
+
+
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  15% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+  30% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  60% {
+    -webkit-transform: translate3d(5%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}

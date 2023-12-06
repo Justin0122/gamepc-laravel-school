@@ -1,0 +1,98 @@
+$primary-color: #13151d;
+$secondary-color: #171923;
+$tertiary-color: #1b1e2a;
+$laravelRed: #f44336;
+$textColor: #928c71;
+$navheight: 5em;
+$sidenav-width: 9.5em;
+
+
+.container.parts {
+  width: 1366px;
+  height: 768px;
+
+  display: grid;
+  grid:
+    "header main" auto
+    "productImage addToPc" 1fr
+        "specifications ." auto
+    ". ." auto
+    / 1fr 1fr;
+  gap: 8px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.addToPc {
+  grid-area: addToPc;
+}
+
+.product-name {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $laravelRed;
+  //center it
+  text-align: center;
+}
+
+#main-image {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  cursor: pointer;
+  object-fit: contain;
+  background-color: white;
+}
+
+.thumbnail.active {
+  border: 2px solid #f00;
+}
+
+.gallery-container {
+  grid-area: productImage;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid $laravelRed;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(0.95);
+}
+
+.main-image-container {
+  position: relative;
+}
+
+.next-previous-component a {
+  text-decoration: none;
+}
+
+.big-num {
+  letter-spacing: 0.1em;
+}
